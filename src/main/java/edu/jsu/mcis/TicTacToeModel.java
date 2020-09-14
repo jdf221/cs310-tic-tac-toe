@@ -1,7 +1,6 @@
 package edu.jsu.mcis;
 
 import java.util.Arrays;
-import java.util.stream.IntStream;
 
 public class TicTacToeModel {
 
@@ -238,7 +237,9 @@ public class TicTacToeModel {
 
         /* Output the board contents as a string (see examples) */
 
-        output.append(String.join("", IntStream.rangeClosed(0, width - 1).mapToObj(String::valueOf).toArray(String[]::new)));
+        // Since this is the GUI project we don't need this.
+        // The following line needs Java 1.8, the gradle build script is using 1.7. Easier to just comment out the line
+        //output.append(String.join("", IntStream.rangeClosed(0, width - 1).mapToObj(String::valueOf).toArray(String[]::new)));
         output.append("\n");
 
         for (int row = 0; row < board.length; row++) {
